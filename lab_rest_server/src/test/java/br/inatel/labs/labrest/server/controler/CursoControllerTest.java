@@ -95,13 +95,14 @@ class CursoControllerTest {
 	}
 	
 	@Test
-	void dadoCursoIdValido_quandoDeleteCurso_entaoRespondeComStatusNoContent() {
+	void dadoCursoIdValido_quandoDeleteCurso_entaoRespondeComStatusNoContentECorpoVazio() {
 		Long cursoIdValido = 1L;
 		
 		webTestClient.delete()
 			.uri("/curso/" + cursoIdValido)
 			.exchange()
-			.expectStatus().isNoContent();
+			.expectStatus().isNoContent()
+			.expectBody().isEmpty();
 	}
 
 
