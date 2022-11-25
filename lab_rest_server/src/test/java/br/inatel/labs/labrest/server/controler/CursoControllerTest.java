@@ -78,17 +78,20 @@ class CursoControllerTest {
 	}
 	
 	@Test
-	void dadoCurso_quandoPutCurso_entaoRespondeComStatusNoContent() {
+	void dadoCurso_quandoPutCurso_entaoRespondeComStatusAcceptedECorpoVazio() {
 		Curso curso = new Curso();
 		curso.setId(1L);
-		curso.setDescricao("Testando Rest com SpringBoot");
-		curso.setCargaHoraria(80);
+		curso.setDescricao("descricao atualizada");
+		curso.setCargaHoraria(111);
 		
 		webTestClient.put()
 			.uri("/curso")
 			.bodyValue(curso)
 			.exchange()
-			.expectStatus().isNoContent();
+			.expectStatus()
+				.isAccepted()
+			.expectBody()
+				.isEmpty();
 	}
 	
 	@Test

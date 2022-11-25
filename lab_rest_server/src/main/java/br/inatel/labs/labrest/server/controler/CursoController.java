@@ -54,7 +54,7 @@ public class CursoController {
 	}
 	
 	@PutMapping
-	@ResponseStatus(code = HttpStatus.NO_CONTENT)
+	@ResponseStatus(code = HttpStatus.ACCEPTED)
 	public void atualizar (@RequestBody Curso curso) {
 		service.atualizarCurso(curso);
 	}
