@@ -2,7 +2,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,eclipse
 
 #h2
-.h2
+lab_jpa/h2
 ### Eclipse ###
 .metadata
 bin/
