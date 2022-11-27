@@ -33,8 +33,22 @@ public class NotaCompraItem {
 	private Produto produto;
 	
 	
+	//construtores
+	public NotaCompraItem() {}
 	
-	
+	public NotaCompraItem( NotaCompra notaCompra, Produto produto,
+			BigDecimal valorCompraProduto, Integer quantidade) {
+		
+		super();
+		this.notaCompra = notaCompra;
+		this.produto = produto;
+		this.valorCompraProduto = valorCompraProduto;
+		this.quantidade = quantidade;
+	}
+
+
+
+	//getters and setters
 	public Long getId() {
 		return id;
 	}
@@ -131,6 +145,12 @@ public class NotaCompraItem {
 		NotaCompraItem other = (NotaCompraItem) obj;
 		return Objects.equals(id, other.id);
 	}
-	
+
+	//toString
+	@Override
+	public String toString() {
+		return "NotaCompraItem [id=" + id + ", valorCompraProduto=" + valorCompraProduto + ", quantidade=" + quantidade
+				+ "]";
+	}
 	
 }

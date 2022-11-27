@@ -29,7 +29,19 @@ public class NotaCompra {
 	
 	@OneToMany(mappedBy = "notaCompra")
 	private List<NotaCompraItem> listaNotaCompraItem;
+	
+	
+	//construtores
+	public NotaCompra() {}
+	
+	public NotaCompra( LocalDate dataEmissao, Fornecedor fornecedor) {
+		super();
+		this.dataEmissao = dataEmissao;
+		this.fornecedor = fornecedor;
+	}
 
+	
+	//getters and setters
 	public Long getId() {
 		return id;
 	}
@@ -87,4 +99,11 @@ public class NotaCompra {
 		
 		return total;
 	}
+
+	//toString
+	@Override
+	public String toString() {
+		return "NotaCompra [id=" + id + ", dataEmissao=" + dataEmissao + "]";
+	}
+	
 }
