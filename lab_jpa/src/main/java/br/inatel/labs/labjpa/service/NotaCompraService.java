@@ -30,6 +30,12 @@ public class NotaCompraService {
 		return nc;
 	}
 	
+	public NotaCompra buscarNotaCompraPeloIdComListaItem(Long id) {
+		NotaCompra nota = em.find(NotaCompra.class, id);
+		nota.getListaNotaCompraItem().size(); //provocando o proxy para buscar a lista de items
+		return nota;
+	}
+	
 	public List<NotaCompra> listarNotaCompra() {
 		List<NotaCompra> notas = em.createQuery("select n from NotaCompra n", NotaCompra.class)
 				.getResultList();
